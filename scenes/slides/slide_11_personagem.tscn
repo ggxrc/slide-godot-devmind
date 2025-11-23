@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxrly2mr352e"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide11_Personagem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Vamos Criar o Personagem!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="NodeTree" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/NodeTree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Hierarquia:"
+horizontal_alignment = 1
+
+[node name="Player" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/NodeTree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 26
+text = "CharacterBody2D (Player)"
+
+[node name="Sprite" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/NodeTree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "  ↳ Sprite2D"
+
+[node name="Collision" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/NodeTree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "  ↳ CollisionShape2D"
+
+[node name="Marker" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/NodeTree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "  ↳ Marker2D (spawn tiro)"
+
+[node name="Explanation" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Por quê?"
+
+[node name="Body" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "CharacterBody2D
+→ Física de movimento"
+autowrap_mode = 2
+
+[node name="Sprite2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Sprite2D
+→ Desenha a imagem"
+autowrap_mode = 2
+
+[node name="Collision2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "CollisionShape2D
+→ Área de colisão"
+autowrap_mode = 2
+
+[node name="Marker2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Marker2D
+→ Ponto de referência"
+autowrap_mode = 2
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "VAMOS FAZER JUNTOS!"
+horizontal_alignment = 1

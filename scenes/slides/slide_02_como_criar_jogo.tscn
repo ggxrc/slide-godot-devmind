@@ -1,0 +1,216 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1k8x7qm1wn2s"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+[ext_resource type="Script" path="res://scripts/slides/Slide02.gd" id="2_1"]
+
+[node name="Slide02_ComoCriarJogo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Como um Jogo é Criado?"
+horizontal_alignment = 1
+
+[node name="DiagramContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="InputBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DiagramContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/InputBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "INPUT"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DiagramContainer/InputBox"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/InputBox/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Teclado
+Mouse
+Controle"
+horizontal_alignment = 1
+
+[node name="Arrow1" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "→"
+
+[node name="LogicBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DiagramContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/LogicBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 32
+text = "LÓGICA"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DiagramContainer/LogicBox"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/LogicBox/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Processar
+Calcular
+Decidir"
+horizontal_alignment = 1
+
+[node name="Arrow2" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "→"
+
+[node name="OutputBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DiagramContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/OutputBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 32
+text = "OUTPUT"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DiagramContainer/OutputBox"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/OutputBox/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Gráficos
+Sons
+Feedback"
+horizontal_alignment = 1
+
+[node name="InteractiveExample" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ClickMeButton" type="Button" parent="MarginContainer/VBoxContainer/InteractiveExample"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "CLIQUE PARA PULAR!"
+
+[node name="Character" type="ColorRect" parent="MarginContainer/VBoxContainer/InteractiveExample"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.5, 0.5, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/InteractiveExample/Character"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "🧍"
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "TODO jogo funciona com esse ciclo - 60x por segundo!"
+horizontal_alignment = 1
+
+[node name="FPSCounter" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 1, 0.7, 1)
+theme_override_font_sizes/font_size = 20
+text = "FPS: 60"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="InteractiveScript" type="Node" parent="."]
+script = ExtResource("2_1")

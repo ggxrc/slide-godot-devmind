@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkxrly2mr352d"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide10_TresConceitos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "3 Conceitos que Você PRECISA Saber"
+horizontal_alignment = 1
+
+[node name="Concepts" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Node" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concepts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Number" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Node"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 48
+text = "1"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Node"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+text = "Node"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Node"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Objeto do jogo"
+horizontal_alignment = 1
+
+[node name="Example" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Node"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+text = "(Sprite, Som, Texto...)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Hierarchy" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concepts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Number" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Hierarchy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 48
+text = "2"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Hierarchy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+text = "Hierarquia"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Hierarchy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Nodes dentro
+de Nodes"
+horizontal_alignment = 1
+
+[node name="Example" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Hierarchy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+text = "(Player tem Sprite, CollisionShape...)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Scene" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concepts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Number" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Scene"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "3"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Scene"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Scene"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Scene"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Template
+reutilizável"
+horizontal_alignment = 1
+
+[node name="Example" type="Label" parent="MarginContainer/VBoxContainer/Concepts/Scene"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+text = "(Criar vários inimigos da mesma Scene)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 26
+text = "Node + Hierarquia + Scene = Godot!"
+horizontal_alignment = 1

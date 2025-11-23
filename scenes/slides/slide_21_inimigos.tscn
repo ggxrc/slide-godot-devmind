@@ -1,0 +1,188 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct41fu74npfj3"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide21_Inimigos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Criando Inimigos"
+horizontal_alignment = 1
+
+[node name="Features" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Feature1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "🎯"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Movimento"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Mover em direção
+ao jogador"
+horizontal_alignment = 1
+
+[node name="Feature2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "💥"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Colisão"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Detectar tiro
+e morrer"
+horizontal_alignment = 1
+
+[node name="Feature3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "❤️"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 28
+text = "Vida"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "HP, dano,
+destruição"
+horizontal_alignment = 1
+
+[node name="Feature4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "⚡"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 28
+text = "Grupo"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Features/Feature4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Adicionar ao
+group \"enemies\""
+horizontal_alignment = 1
+
+[node name="CodeExample" type="ColorRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CodeExample"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Line1" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "func _physics_process(delta):"
+
+[node name="Line2" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "    var direction = (player.position - position).normalized()"
+
+[node name="Line3" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "    velocity = direction * speed"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "Mesmo processo: Node → Script → Lógica"
+horizontal_alignment = 1

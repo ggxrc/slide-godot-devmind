@@ -1,0 +1,294 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2k8x7qm1wn3r"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[sub_resource type="GDScript" id="GDScript_moving"]
+script/source = "extends ColorRect
+
+var speed = 300.0
+var max_x = 1000.0
+
+func _process(delta):
+	position.x += speed * delta
+	
+	if position.x > max_x:
+		position.x = 0
+"
+
+[sub_resource type="GDScript" id="GDScript_pause"]
+script/source = "extends VBoxContainer
+
+@onready var pause_button = get_node_or_null(\"DemoPanel/Controls/PauseButton\")
+@onready var moving_square = get_node_or_null(\"DemoPanel/GameArea/MovingSquare\")
+@onready var status_label = get_node_or_null(\"DemoPanel/Controls/Status\")
+
+var is_paused = false
+
+func _ready():
+	if pause_button:
+		pause_button.pressed.connect(_on_pause_pressed)
+
+func _on_pause_pressed():
+	is_paused = !is_paused
+	
+	if pause_button:
+		if is_paused:
+			pause_button.text = \"▶️ DESPAUSAR\"
+		else:
+			pause_button.text = \"⏸️ PAUSAR\"
+	
+	if status_label:
+		if is_paused:
+			status_label.text = \"Status: PAUSADO\"
+			status_label.add_theme_color_override(\"font_color\", Color(0.8, 0.8, 0.4))
+		else:
+			status_label.text = \"Status: JOGANDO\"
+			status_label.add_theme_color_override(\"font_color\", Color(0.4, 0.8, 0.4))
+	
+	if moving_square:
+		moving_square.set_process(!is_paused)
+"
+
+[node name="Slide24_Pausa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+script = SubResource("GDScript_pause")
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Sistema de Pausa"
+horizontal_alignment = 1
+
+[node name="Explanation" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Feature" type="Label" parent="MarginContainer/VBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "Congelar o jogo com 1 linha!"
+horizontal_alignment = 1
+
+[node name="Code" type="ColorRect" parent="MarginContainer/VBoxContainer/Explanation"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Explanation/Code"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation/Code/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Line1" type="Label" parent="MarginContainer/VBoxContainer/Explanation/Code/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 20
+text = "get_tree().paused = true"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="MarginContainer/VBoxContainer/Explanation/Code/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "get_tree().paused = false"
+horizontal_alignment = 1
+
+[node name="DemoPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DemoPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "DEMONSTRAÇÃO:"
+horizontal_alignment = 1
+
+[node name="GameArea" type="Panel" parent="MarginContainer/VBoxContainer/DemoPanel"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MovingSquare" type="ColorRect" parent="MarginContainer/VBoxContainer/DemoPanel/GameArea"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_vertical = 2
+color = Color(1, 0.5, 0.5, 1)
+script = SubResource("GDScript_moving")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DemoPanel/GameArea/MovingSquare"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -13.0
+offset_right = 15.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "🎮"
+horizontal_alignment = 1
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DemoPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="PauseButton" type="Button" parent="MarginContainer/VBoxContainer/DemoPanel/Controls"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "⏸️ PAUSAR"
+
+[node name="Status" type="Label" parent="MarginContainer/VBoxContainer/DemoPanel/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 19
+text = "Status: JOGANDO"
+horizontal_alignment = 1
+
+[node name="States" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Explanation"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Playing" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation/States"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/Explanation/States/Playing"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+color = Color(0.4, 0.8, 0.4, 0.3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation/States/Playing/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Playing/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "▶️"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Playing/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "JOGANDO"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Playing"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "paused = false"
+horizontal_alignment = 1
+
+[node name="Paused" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation/States"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/Explanation/States/Paused"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+color = Color(0.8, 0.8, 0.4, 0.3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation/States/Paused/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Paused/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "⏸️"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Paused/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Explanation/States/Paused"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "paused = true"
+horizontal_alignment = 1
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 19
+text = "Dica: UI precisa ter Process Mode = \"When Paused\""
+horizontal_alignment = 1

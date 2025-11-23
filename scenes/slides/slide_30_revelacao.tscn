@@ -1,0 +1,205 @@
+[gd_scene load_steps=4 format=3 uid="uid://i1k8x7qm1wn2x"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+[ext_resource type="Script" path="res://scripts/slides/Slide30.gd" id="2_1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glitch"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="Slide30_Revelacao" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PreRevealTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 56
+text = "MOMENTO DA VERDADE..."
+horizontal_alignment = 1
+
+[node name="TriggerButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "🎭 REVELAR"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RevealContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="GlitchPanel" type="Panel" parent="MarginContainer/VBoxContainer/RevealContent"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_glitch")
+
+[node name="GlitchLabel" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/GlitchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -30.0
+offset_right = 400.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 48
+text = "░░░ ESTE SLIDE FOI FEITO 100% NA GODOT! ░░░"
+horizontal_alignment = 1
+
+[node name="Explanation" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RevealContent"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 36
+text = "Como isso funciona:"
+horizontal_alignment = 1
+
+[node name="Point1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RevealContent/Explanation"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point1"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✅"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Cada slide = uma cena"
+
+[node name="Point2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RevealContent/Explanation"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point2"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✅"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Transições = animações"
+
+[node name="Point3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RevealContent/Explanation"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point3"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✅"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Botões = detecção de input"
+
+[node name="Point4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RevealContent/Explanation"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point4"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✅"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/Explanation/Point4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Tudo que ensinamos = usado aqui"
+
+[node name="GodotLogo" type="ColorRect" parent="MarginContainer/VBoxContainer/RevealContent"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.3, 0.5, 0.8, 0.5)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/GodotLogo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "🤖"
+horizontal_alignment = 1
+
+[node name="GitHubNote" type="Label" parent="MarginContainer/VBoxContainer/RevealContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Projeto disponível no GitHub!
+[Adicionar link aqui]"
+horizontal_alignment = 1
+
+[node name="GlitchEffect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.5, 0.1)
+
+[node name="RevealController" type="Node" parent="."]
+script = ExtResource("2_1")
+
+[node name="GlitchTimer" type="Timer" parent="RevealController"]
+wait_time = 0.1
+one_shot = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

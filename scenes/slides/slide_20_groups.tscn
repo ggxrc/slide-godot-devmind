@@ -1,0 +1,248 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt41fu74npfj2"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide20_Groups" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Groups: Organizando Objetos"
+horizontal_alignment = 1
+
+[node name="Concept" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Question" type="Label" parent="MarginContainer/VBoxContainer/Concept"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 32
+text = "\"Como saber se colidiu com inimigo?\""
+horizontal_alignment = 1
+
+[node name="Answer" type="Label" parent="MarginContainer/VBoxContainer/Concept"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+text = "Use GROUPS!"
+horizontal_alignment = 1
+
+[node name="Groups" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Concept"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Enemies" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concept/Groups"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "Group: \"enemies\""
+horizontal_alignment = 1
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Enemy1" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(0.8, 0.4, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items/Enemy1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Enemy1 👾"
+horizontal_alignment = 1
+
+[node name="Enemy2" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(0.8, 0.4, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items/Enemy2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Enemy2 👾"
+horizontal_alignment = 1
+
+[node name="Enemy3" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(0.8, 0.4, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Enemies/Items/Enemy3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Enemy3 👾"
+horizontal_alignment = 1
+
+[node name="Bullets" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concept/Groups"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "Group: \"bullets\""
+horizontal_alignment = 1
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Bullet1" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(1, 0.8, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items/Bullet1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Bullet 🔴"
+horizontal_alignment = 1
+
+[node name="Bullet2" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(1, 0.8, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items/Bullet2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Bullet 🔴"
+horizontal_alignment = 1
+
+[node name="Bullet3" type="ColorRect" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+color = Color(1, 0.8, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Concept/Groups/Bullets/Items/Bullet3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Bullet 🔴"
+horizontal_alignment = 1
+
+[node name="Code" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Code"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Checar group no código:"
+
+[node name="CodeLine" type="Label" parent="MarginContainer/VBoxContainer/Code"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 26
+text = "if area.is_in_group(\"enemies\"):"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "Node Properties → Node → Groups → Add"
+horizontal_alignment = 1

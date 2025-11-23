@@ -1,0 +1,229 @@
+[gd_scene load_steps=3 format=3 uid="uid://j1k8x7qm1wn2y"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[sub_resource type="GDScript" id="GDScript_slider"]
+script/source = "extends Node
+
+@onready var slider = get_node_or_null(\"../MarginContainer/VBoxContainer/DemoContainer/ControlsPanel/SpeedSlider\")
+@onready var value_label = get_node_or_null(\"../MarginContainer/VBoxContainer/DemoContainer/ControlsPanel/SpeedValue\")
+@onready var player = get_node_or_null(\"../MarginContainer/VBoxContainer/DemoContainer/VisualDemo/Track/Player\")
+
+var is_moving = true
+var track_width = 360.0
+
+func _ready():
+	if slider:
+		slider.value_changed.connect(_on_speed_changed)
+
+func _process(delta):
+	if is_moving and player and slider:
+		var speed = slider.value
+		player.position.x += speed * delta
+		
+		if player.position.x > track_width:
+			player.position.x = 0
+
+func _on_speed_changed(value: float):
+	if not value_label:
+		return
+	value_label.text = \"speed = %d\" % value
+	
+	# Mudar cor baseado na velocidade
+	if value < 300:
+		value_label.add_theme_color_override(\"font_color\", Color(1, 0.5, 0.5))
+	elif value < 700:
+		value_label.add_theme_color_override(\"font_color\", Color(1, 1, 0.5))
+	else:
+		value_label.add_theme_color_override(\"font_color\", Color(0.5, 1, 0.5))
+"
+
+[node name="Slide16_Pausa_Inspector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "⏸️ PAUSA: O Inspector é Seu Amigo"
+horizontal_alignment = 1
+
+[node name="WhatIsInspector" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/WhatIsInspector"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "O que é o Inspector?"
+
+[node name="Point1" type="Label" parent="MarginContainer/VBoxContainer/WhatIsInspector"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "• Painel de configurações de cada objeto"
+autowrap_mode = 3
+
+[node name="Point2" type="Label" parent="MarginContainer/VBoxContainer/WhatIsInspector"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "• Muda valores SEM tocar no código!"
+autowrap_mode = 3
+
+[node name="DemoContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="ControlsPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DemoContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="SpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Velocidade do Player:"
+
+[node name="SpeedSlider" type="HSlider" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+min_value = 100.0
+max_value = 1000.0
+step = 50.0
+value = 300.0
+
+[node name="SpeedValue" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 32
+text = "speed = 300"
+horizontal_alignment = 1
+
+[node name="Descriptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Slow" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "100 = 🐢 lento"
+
+[node name="Normal" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "500 = 🚶 rápido"
+
+[node name="Fast" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/ControlsPanel/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "1000 = 🚀 MUITO rápido!"
+
+[node name="VisualDemo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/DemoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/VisualDemo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Visualização:"
+horizontal_alignment = 1
+
+[node name="Track" type="Panel" parent="MarginContainer/VBoxContainer/DemoContainer/VisualDemo"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="Player" type="ColorRect" parent="MarginContainer/VBoxContainer/DemoContainer/VisualDemo/Track"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+color = Color(1, 0.5, 0.5, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DemoContainer/VisualDemo/Track/Player"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "🧍"
+horizontal_alignment = 1
+
+[node name="MotivationalText" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 30
+text = "Experimentar = Aprender!"
+horizontal_alignment = 1
+
+[node name="PauseTimer" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PauseTimer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PauseTimer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pausa de 5 minutos"
+horizontal_alignment = 1
+
+[node name="TimeDisplay" type="Label" parent="MarginContainer/VBoxContainer/PauseTimer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 48
+text = "5:00"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="SliderController" type="Node" parent="."]
+script = SubResource("GDScript_slider")

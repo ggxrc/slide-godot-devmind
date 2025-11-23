@@ -1,0 +1,126 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccrir3v4wiwlg"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide32_ContinueAprendendo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Continue Aprendendo!"
+horizontal_alignment = 1
+
+[node name="Resources" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="Official" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Resources/Official"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "📚 Documentação Oficial"
+
+[node name="Link" type="Label" parent="MarginContainer/VBoxContainer/Resources/Official"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "docs.godotengine.org"
+
+[node name="YouTube" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Resources/YouTube"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "🎥 Tutoriais YouTube"
+
+[node name="Channels" type="Label" parent="MarginContainer/VBoxContainer/Resources/YouTube"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Brackeys, GDQuest, HeartBeast, Heartgamez (PT-BR)"
+
+[node name="Community" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Resources/Community"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "💬 Comunidade"
+
+[node name="Places" type="Label" parent="MarginContainer/VBoxContainer/Resources/Community"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Discord da Godot, Reddit r/godot, Fórum oficial"
+
+[node name="Practice" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Resources/Practice"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "🎮 Game Jams"
+
+[node name="Sites" type="Label" parent="MarginContainer/VBoxContainer/Resources/Practice"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "itch.io (Ludum Dare, GMTK Jam) - Faça jogos com prazos!"
+
+[node name="NextSteps" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/NextSteps"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Próximos Passos:"
+horizontal_alignment = 1
+
+[node name="Steps" type="Label" parent="MarginContainer/VBoxContainer/NextSteps"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "1. Termine este jogo  2. Adicione sua ideia maluca
+3. Compartilhe no itch.io  4. Comece OUTRO jogo!"
+horizontal_alignment = 1
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "A melhor forma de aprender é FAZENDO!"
+horizontal_alignment = 1

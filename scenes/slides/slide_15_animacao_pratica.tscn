@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpjv0w5d7wbbp"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide15_AnimacaoPratica" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Animação na Prática"
+horizontal_alignment = 1
+
+[node name="Table" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Table"]
+layout_mode = 2
+
+[node name="Property" type="Label" parent="MarginContainer/VBoxContainer/Table/Header"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Propriedade"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/Table/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Valor"
+
+[node name="Row1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Table"]
+layout_mode = 2
+
+[node name="Property" type="Label" parent="MarginContainer/VBoxContainer/Table/Row1"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "position.y"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/Table/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "0 → -50 → 0"
+
+[node name="Row2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Table"]
+layout_mode = 2
+
+[node name="Property" type="Label" parent="MarginContainer/VBoxContainer/Table/Row2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "rotation_degrees"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/Table/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "0 → 360"
+
+[node name="Row3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Table"]
+layout_mode = 2
+
+[node name="Property" type="Label" parent="MarginContainer/VBoxContainer/Table/Row3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "scale"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/Table/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "(1,1) → (1.2, 1.2) → (1,1)"
+
+[node name="Row4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Table"]
+layout_mode = 2
+
+[node name="Property" type="Label" parent="MarginContainer/VBoxContainer/Table/Row4"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "modulate.a"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/Table/Row4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "1 → 0 (fade out)"
+
+[node name="Instructions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Instructions"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Como fazer:"
+
+[node name="Step1" type="Label" parent="MarginContainer/VBoxContainer/Instructions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "1. Adicionar AnimationPlayer ao Node"
+
+[node name="Step2" type="Label" parent="MarginContainer/VBoxContainer/Instructions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "2. Animation → New → Dar um nome"
+
+[node name="Step3" type="Label" parent="MarginContainer/VBoxContainer/Instructions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "3. Clicar 🔑 ao lado das propriedades"
+
+[node name="Step4" type="Label" parent="MarginContainer/VBoxContainer/Instructions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "4. Mover timeline, mudar valor, 🔑 de novo"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "VAMOS PRATICAR!"
+horizontal_alignment = 1

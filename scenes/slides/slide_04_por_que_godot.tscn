@@ -1,0 +1,211 @@
+[gd_scene load_steps=2 format=3 uid="uid://f1k8x7qm1wn2u"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide04_PorQueGodot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
+text = "Por que Escolhemos a Godot?"
+horizontal_alignment = 1
+
+[node name="ReasonsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="LeftColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Reason1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "💰"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "100% Gratuita (sempre)"
+
+[node name="Reason2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "🪶"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Leve (50MB vs 20GB+)"
+
+[node name="Reason3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason3"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "🚀"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/LeftColumn/Reason3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Crescimento Rápido"
+
+[node name="RightColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Reason4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn/Reason4"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "🎓"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn/Reason4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Fácil de Aprender"
+
+[node name="Reason5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn/Reason5"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "🔓"
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/ReasonsContainer/RightColumn/Reason5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Código Aberto"
+
+[node name="SizeComparison" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SizeComparison"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Comparação de Tamanho (Download)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="GodotBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Bar" type="ColorRect" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/GodotBar"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(0.3, 0.7, 1, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/GodotBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Godot: 50MB"
+horizontal_alignment = 1
+
+[node name="UnityBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.0
+alignment = 2
+
+[node name="Bar" type="ColorRect" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/UnityBar"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/UnityBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Unity: 2GB+"
+horizontal_alignment = 1
+
+[node name="UnrealBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 40.0
+alignment = 2
+
+[node name="Bar" type="ColorRect" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/UnrealBar"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SizeComparison/VBoxContainer/HBoxContainer/UnrealBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Unreal: 20GB+"
+horizontal_alignment = 1
+
+[node name="ImportantNote" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 26
+text = "Mas os CONCEITOS funcionam em TODAS as engines!"
+horizontal_alignment = 1

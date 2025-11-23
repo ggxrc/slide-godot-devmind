@@ -1,0 +1,180 @@
+[gd_scene load_steps=2 format=3 uid="uid://66ed5tehpsc2"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide26_Particulas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Partículas e Efeitos Visuais"
+horizontal_alignment = 1
+
+[node name="Types" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Explosion" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Types"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Types/Explosion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "💥"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Explosion"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+text = "Explosões"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Types/Explosion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Quando inimigo morre"
+horizontal_alignment = 1
+
+[node name="Trail" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Types"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Types/Trail"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "✨"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Trail"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Rastros"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Types/Trail"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Atrás de projéteis"
+horizontal_alignment = 1
+
+[node name="Impact" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Types"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Types/Impact"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "⚡"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Impact"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Impacto"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Types/Impact"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Feedback de colisão"
+horizontal_alignment = 1
+
+[node name="Ambient" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Types"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Types/Ambient"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "🌟"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Ambient"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Ambiente"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Types/Ambient"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Atmosfera, clima"
+horizontal_alignment = 1
+
+[node name="Node" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Node"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Node na Godot:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Node"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Type1" type="Label" parent="MarginContainer/VBoxContainer/Node/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "CPUParticles2D"
+horizontal_alignment = 1
+
+[node name="Separator" type="Label" parent="MarginContainer/VBoxContainer/Node/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "ou"
+
+[node name="Type2" type="Label" parent="MarginContainer/VBoxContainer/Node/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "GPUParticles2D"
+horizontal_alignment = 1
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "Configurar: Amount, Lifetime, Direction, Gravity..."
+horizontal_alignment = 1

@@ -1,0 +1,163 @@
+[gd_scene load_steps=2 format=3 uid="uid://crir3v4wiwle"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide29_Balanceamento" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Balanceamento e Experimentação"
+horizontal_alignment = 1
+
+[node name="Philosophy" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="Quote" type="Label" parent="MarginContainer/VBoxContainer/Philosophy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 28
+text = "\"Não existe número perfeito!\""
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Philosophy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Game design = TESTAR e AJUSTAR constantemente"
+horizontal_alignment = 1
+
+[node name="Examples" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Philosophy"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="TooEasy" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Philosophy/Examples"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooEasy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "😴"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooEasy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Muito Fácil"
+horizontal_alignment = 1
+
+[node name="Values" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooEasy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Enemy HP: 1
+Player Damage: 10
+Spawn Rate: 5s"
+horizontal_alignment = 1
+
+[node name="Balanced" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Philosophy/Examples"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/Balanced"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "✅"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/Balanced"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "Balanceado"
+horizontal_alignment = 1
+
+[node name="Values" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/Balanced"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Enemy HP: 3
+Player Damage: 1
+Spawn Rate: 2s"
+horizontal_alignment = 1
+
+[node name="TooHard" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Philosophy/Examples"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooHard"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "😰"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooHard"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "Muito Difícil"
+horizontal_alignment = 1
+
+[node name="Values" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooHard"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Enemy HP: 10
+Player Damage: 1
+Spawn Rate: 0.5s"
+horizontal_alignment = 1
+
+[node name="Tips" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Tips"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Dicas de Balanceamento:"
+
+[node name="Tip1" type="Label" parent="MarginContainer/VBoxContainer/Tips"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "• Use @export var para ajustar no Inspector SEM recompilar"
+
+[node name="Tip2" type="Label" parent="MarginContainer/VBoxContainer/Tips"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "• Peça para alguém testar (você já conhece o jogo demais!)"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 22
+text = "Iterar = Fazer, Testar, Ajustar, Repetir"
+horizontal_alignment = 1

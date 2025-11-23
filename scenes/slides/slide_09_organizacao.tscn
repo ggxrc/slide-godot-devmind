@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://kxrly2mr352c"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide09_Organizacao" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Organizando seu Projeto"
+horizontal_alignment = 1
+
+[node name="Tree" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Root" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 32
+text = "📁 res://"
+
+[node name="Scenes" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "    📂 scenes/"
+
+[node name="Player" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        📄 player.tscn"
+
+[node name="Enemy" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        📄 enemy.tscn"
+
+[node name="Scripts" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "    📂 scripts/"
+
+[node name="PlayerGd" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        📜 player.gd"
+
+[node name="EnemyGd" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        📜 enemy.gd"
+
+[node name="Assets" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "    📂 assets/"
+
+[node name="Sprites" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        🖼️ sprites/"
+
+[node name="Audio" type="Label" parent="MarginContainer/VBoxContainer/Tree"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "        🔊 audio/"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "Organize desde o início = Menos dor de cabeça depois!"
+horizontal_alignment = 1

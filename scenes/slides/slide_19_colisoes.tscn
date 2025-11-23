@@ -1,0 +1,263 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50kvndq3uwna"]
+
+[ext_resource type="Script" uid="uid://chrs04u1qokbv" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[sub_resource type="GDScript" id="GDScript_collision"]
+script/source = "extends VBoxContainer
+
+@onready var bullet = get_node_or_null(\"Content/Visual/Diagram/Bullet\")
+@onready var enemy = get_node_or_null(\"Content/Visual/Diagram/Enemy\")
+@onready var impact_label = get_node_or_null(\"Content/Visual/Diagram/Impact\")
+@onready var status_label = get_node_or_null(\"Content/Visual/StatusLabel\")
+
+var bullet_pos = 100.0
+var enemy_pos = 400.0
+var moving = true
+var collision_happened = false
+var waiting_to_reset = false
+
+func _ready():
+	if bullet:
+		bullet.position.x = bullet_pos
+	if enemy:
+		enemy.position.x = enemy_pos
+	if impact_label:
+		impact_label.modulate.a = 0.0
+
+func _process(delta):
+	if not moving or waiting_to_reset:
+		return
+	
+	if bullet and enemy:
+		bullet_pos += 200 * delta
+		bullet.position.x = bullet_pos
+		
+		var distance = abs(bullet_pos - enemy_pos)
+		
+		if distance < 50 and not collision_happened:
+			collision_happened = true
+			_show_collision()
+			waiting_to_reset = true
+			_reset_after_delay()
+			return
+
+func _reset_after_delay():
+	await get_tree().create_timer(1.0).timeout
+	bullet_pos = 100.0
+	if bullet:
+		bullet.position.x = bullet_pos
+	collision_happened = false
+	waiting_to_reset = false
+	if impact_label:
+		impact_label.modulate.a = 0.0
+	if status_label:
+		status_label.text = 'Tiro se aproximando...'
+
+func _show_collision():
+	if impact_label:
+		impact_label.modulate.a = 1.0
+	if status_label:
+		status_label.text = '💥 COLISÃO DETECTADA!'
+	
+	if enemy:
+		var tween = create_tween()
+		tween.tween_property(enemy, 'modulate:a', 0.3, 0.3)
+		tween.tween_property(enemy, 'modulate:a', 1.0, 0.3)
+"
+
+[node name="Slide19_Colisoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+script = SubResource("GDScript_collision")
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
+text = "Colisões: Detectando o Impacto"
+horizontal_alignment = 1
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Visual" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Diagram" type="ColorRect" parent="MarginContainer/VBoxContainer/Content/Visual"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.2, 0.8)
+
+[node name="Bullet" type="ColorRect" parent="MarginContainer/VBoxContainer/Content/Visual/Diagram"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -30.0
+offset_right = 160.0
+offset_bottom = 30.0
+grow_vertical = 2
+color = Color(1, 0.8, 0.4, 0.8)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/Visual/Diagram/Bullet"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "🔴"
+horizontal_alignment = 1
+
+[node name="Enemy" type="ColorRect" parent="MarginContainer/VBoxContainer/Content/Visual/Diagram"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = -30.0
+offset_right = 460.0
+offset_bottom = 30.0
+grow_vertical = 2
+color = Color(0.8, 0.4, 0.4, 0.8)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/Visual/Diagram/Enemy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "👾"
+horizontal_alignment = 1
+
+[node name="Impact" type="Label" parent="MarginContainer/VBoxContainer/Content/Visual/Diagram"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 147.5
+offset_top = -44.0
+offset_right = 235.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "💥"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer/Content/Visual"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+text = "Tiro se aproximando..."
+horizontal_alignment = 1
+
+[node name="Code" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Content/Code"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Código:"
+
+[node name="CodeBox" type="ColorRect" parent="MarginContainer/VBoxContainer/Content/Code"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Line1" type="Label" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "func _on_area_entered(area):"
+
+[node name="Line2" type="Label" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 20
+text = "    if area is Enemy:"
+
+[node name="Line3" type="Label" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 20
+text = "        area.take_damage()"
+
+[node name="Line4" type="Label" parent="MarginContainer/VBoxContainer/Content/Code/CodeBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 20
+text = "        queue_free()"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "Area2D + signal = Detecção automática!"
+horizontal_alignment = 1

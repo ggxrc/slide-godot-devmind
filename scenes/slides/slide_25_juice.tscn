@@ -1,0 +1,174 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2k8x7qm1wn3s"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide25_Juice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "\"Game Feel\": O Molho Secreto"
+horizontal_alignment = 1
+
+[node name="Quote" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer/Quote"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+text = "\"Juice = O que faz o jogo parecer VIVO!\""
+horizontal_alignment = 1
+
+[node name="Author" type="Label" parent="MarginContainer/VBoxContainer/Quote"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "- Desenvolvedores de jogos indies"
+horizontal_alignment = 1
+
+[node name="Comparison" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Before" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Comparison"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Comparison/Before"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "❌ SEM JUICE"
+horizontal_alignment = 1
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/Comparison/Before"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.2, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Comparison/Before/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Square" type="ColorRect" parent="MarginContainer/VBoxContainer/Comparison/Before/Box/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Comparison/Before/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Quadrado cinza
+Move. Fim."
+horizontal_alignment = 1
+
+[node name="After" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Comparison"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Comparison/After"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "✅ COM JUICE"
+horizontal_alignment = 1
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/Comparison/After"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.2, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Comparison/After/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -70.0
+offset_right = 100.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Character" type="Label" parent="MarginContainer/VBoxContainer/Comparison/After/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "✨🎮✨"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Comparison/After/Box/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Partículas, som,
+animação, screen shake,
+feedback visual!"
+horizontal_alignment = 1
+
+[node name="Examples" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Examples"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Exemplos de Juice:"
+
+[node name="List" type="Label" parent="MarginContainer/VBoxContainer/Examples"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "• Tela treme quando bate  • Som de colisão satisfatório
+• Partículas de explosão  • Personagem \"squash and stretch\""
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "Pequenos detalhes = Grande diferença!"
+horizontal_alignment = 1

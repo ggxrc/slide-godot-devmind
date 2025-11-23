@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=3 uid="uid://c66ed5tehpsc4"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide28_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "UI: Comunicando com o Jogador"
+horizontal_alignment = 1
+
+[node name="Elements" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Health" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Elements"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Elements/Health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "❤️❤️❤️"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Elements/Health"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Vida"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Elements/Health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Barra ou corações"
+horizontal_alignment = 1
+
+[node name="Score" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Elements"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Elements/Score"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "🏆"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Elements/Score"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Pontuação"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Elements/Score"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Score: 1250"
+horizontal_alignment = 1
+
+[node name="Ammo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Elements"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Elements/Ammo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "🔫"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Elements/Ammo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Munição"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Elements/Ammo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Ammo: 32/100"
+horizontal_alignment = 1
+
+[node name="Timer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Elements"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Label" parent="MarginContainer/VBoxContainer/Elements/Timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "⏱️"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Elements/Timer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 28
+text = "Timer"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Elements/Timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Time: 02:45"
+horizontal_alignment = 1
+
+[node name="Nodes" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Nodes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Nodes UI na Godot:"
+
+[node name="List" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Nodes"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer/Nodes/List"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "Label"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Nodes/List"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "ProgressBar"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/Nodes/List"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "TextureRect"
+horizontal_alignment = 1
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "CanvasLayer = UI sempre visível por cima do jogo"
+horizontal_alignment = 1

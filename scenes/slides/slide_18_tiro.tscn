@@ -1,0 +1,206 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpjv0w5d7wbbr"]
+
+[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+
+[node name="Slide18_Tiro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Sistema de Tiro"
+horizontal_alignment = 1
+
+[node name="CodeExample" type="ColorRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CodeExample"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Line1" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "func shoot():"
+
+[node name="Line2" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "    var bullet = bullet_scene.instantiate()"
+
+[node name="Line3" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "    bullet.position = marker.global_position"
+
+[node name="Line4" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "    get_tree().root.add_child(bullet)"
+
+[node name="FlowDiagram" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Step1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/FlowDiagram"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/FlowDiagram/Step1"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.5, 0.8, 1, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step1/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Instanciar"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Clonar Scene"
+horizontal_alignment = 1
+
+[node name="Arrow1" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+vertical_alignment = 1
+
+[node name="Step2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/FlowDiagram"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/FlowDiagram/Step2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.8, 0.4, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step2/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Posicionar"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Colocar no lugar"
+horizontal_alignment = 1
+
+[node name="Arrow2" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+vertical_alignment = 1
+
+[node name="Step3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/FlowDiagram"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Box" type="ColorRect" parent="MarginContainer/VBoxContainer/FlowDiagram/Step3"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.4, 0.8, 0.3)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step3/Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Adicionar"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/FlowDiagram/Step3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Inserir no jogo"
+horizontal_alignment = 1
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 26
+text = "3 linhas = Sistema de tiro completo!"
+horizontal_alignment = 1
