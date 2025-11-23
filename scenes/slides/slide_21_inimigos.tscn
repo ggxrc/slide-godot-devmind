@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ct41fu74npfj3"]
 
-[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+[ext_resource type="Script" uid="uid://chrs04u1qokbv" path="res://scripts/BaseSlide.gd" id="1_1"]
 
 [node name="Slide21_Inimigos" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
