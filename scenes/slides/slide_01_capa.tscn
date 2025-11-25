@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1k8x7qm1wn2r"]
+[gd_scene load_steps=5 format=3 uid="uid://c1k8x7qm1wn2r"]
 
 [ext_resource type="Script" uid="uid://chrs04u1qokbv" path="res://scripts/BaseSlide.gd" id="1_1"]
+[ext_resource type="SpriteFrames" uid="uid://cyhdvvolomeci" path="res://assets/Animations/Sprite_animations.tres" id="2_stkk2"]
 
 [sub_resource type="Gradient" id="Gradient_1"]
 colors = PackedColorArray(0.1, 0.1, 0.3, 1, 0.3, 0.1, 0.3, 1)
@@ -61,35 +62,19 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="CharacterPlaceholder" type="ColorRect" parent="Content"]
+[node name="CharacterPlaceholder" type="CenterContainer" parent="Content"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-color = Color(0.5, 0.7, 1, 0.3)
 
-[node name="CharacterLabel" type="Label" parent="Content/CharacterPlaceholder"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -13.0
-offset_right = 100.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 14
-text = "[Personagem Animado]"
-horizontal_alignment = 1
-
-[node name="StartHint" type="Label" parent="Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "Pressione → para começar"
-horizontal_alignment = 1
+[node name="sprite_template" type="AnimatedSprite2D" parent="Content/CharacterPlaceholder"]
+texture_filter = 1
+position = Vector2(62.5, 65.5)
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("2_stkk2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.22576202
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "pulse"
