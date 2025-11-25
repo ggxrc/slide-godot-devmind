@@ -62,21 +62,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="CharacterPlaceholder" type="CenterContainer" parent="Content"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="sprite_template" type="AnimatedSprite2D" parent="Content/CharacterPlaceholder"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(62.5, 65.5)
-scale = Vector2(6, 6)
-sprite_frames = ExtResource("2_stkk2")
-animation = &"idle_01"
-autoplay = "idle_01"
-frame_progress = 0.5365529
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "pulse"
 
@@ -92,3 +77,15 @@ initial_velocity_max = 30.0
 scale_amount_min = 2.0
 scale_amount_max = 5.0
 color = Color(0.7, 0.8, 1, 0.5)
+
+[node name="CanvasLayer" type="CanvasGroup" parent="."]
+
+[node name="sprite_template" type="AnimatedSprite2D" parent="CanvasLayer"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(960, 790)
+scale = Vector2(10, 10)
+sprite_frames = ExtResource("2_stkk2")
+animation = &"idle_01"
+autoplay = "idle_01"
+frame_progress = 0.5365529
