@@ -69,12 +69,13 @@ size_flags_horizontal = 4
 
 [node name="sprite_template" type="AnimatedSprite2D" parent="Content/CharacterPlaceholder"]
 texture_filter = 1
+texture_repeat = 2
 position = Vector2(62.5, 65.5)
 scale = Vector2(6, 6)
 sprite_frames = ExtResource("2_stkk2")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.22576202
+animation = &"idle_01"
+autoplay = "idle_01"
+frame_progress = 0.5365529
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "pulse"

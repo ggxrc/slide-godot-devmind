@@ -62,17 +62,16 @@ size_flags_vertical = 3
 
 [node name="Description" type="Label" parent="MarginContainer/VBoxContainer/DiagramContainer/InputBox/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -40.0
-offset_right = 80.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_left = 0.3382046
+anchor_top = 0.2917505
+anchor_right = 0.6889353
+anchor_bottom = 0.6539235
+offset_right = -84.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 theme_override_font_sizes/font_size = 20
 text = "Teclado
 Mouse
@@ -183,9 +182,11 @@ size_flags_horizontal = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/InteractiveExample/Character"]
 texture_filter = 1
 position = Vector2(33, 30)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_i54s3")
-animation = &"idle"
+animation = &"idle_02"
+autoplay = "idle_02"
+frame_progress = 0.729709
 
 [node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
