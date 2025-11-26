@@ -19,14 +19,11 @@ func _on_spawn_timer_timeout():
 		spawn_timer.stop()
 		return
 	
-	# Criar CharacterBody2D para o inimigo
-	var enemy = CharacterBody2D.new()
-	enemy.name = "Enemy" + str(enemy_count)
-	
-	# Criar AnimatedSprite2D como filho
-	var sprite = AnimatedSprite2D.new()
-	sprite.name = "AnimatedSprite2D"
-	enemy.add_child(sprite)
+    #Alguma coisa
+	# Criar o emoji do inimigo - Teste
+	var enemy = Label.new()
+	enemy.text = "👾"
+	enemy.add_theme_font_size_override("font_size", 48)
 	
 	# Posição aleatória na tela
 	var screen_size = get_viewport_rect().size
