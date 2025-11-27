@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cgdm61yvdb1s1"]
 
-[ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
+[ext_resource type="Script" uid="uid://chrs04u1qokbv" path="res://scripts/BaseSlide.gd" id="1_1"]
 
 [node name="Slide07_Interface" type="Control"]
 layout_mode = 3
@@ -55,16 +55,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/InterfaceImage/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "[Screenshot anotado da interface]"
-horizontal_alignment = 1
-
 [node name="Areas" type="Label" parent="MarginContainer/VBoxContainer/InterfaceImage/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 80
 text = "1. Scene Tree  |  2. FileSystem
 3. Viewport  |  4. Inspector
 5. Bottom Panel (Animation, Debug)"
