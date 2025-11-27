@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://i1k8x7qm1wn2x"]
+[gd_scene load_steps=5 format=3 uid="uid://i1k8x7qm1wn2x"]
 
 [ext_resource type="Script" path="res://scripts/BaseSlide.gd" id="1_1"]
 [ext_resource type="Script" path="res://scripts/slides/Slide30.gd" id="2_1"]
+[ext_resource type="Texture2D" uid="uid://d1abyihyj2oe0" path="res://icon.svg" id="3_icon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glitch"]
 bg_color = Color(0.1, 0.1, 0.1, 1)
@@ -36,15 +37,15 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 56
-text = "MOMENTO DA VERDADE..."
+text = "GOSTARAM DOS SLIDES?"
 horizontal_alignment = 1
 
 [node name="TriggerButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 80)
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 28
-text = "🎭 REVELAR"
+text = "MOMENTO DA VERDADE..."
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -154,35 +155,20 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 26
 text = "Tudo que ensinamos = usado aqui"
 
-[node name="GodotLogo" type="ColorRect" parent="MarginContainer/VBoxContainer/RevealContent"]
+[node name="GodotLogo" type="TextureRect" parent="MarginContainer/VBoxContainer/RevealContent"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
-color = Color(0.3, 0.5, 0.8, 0.5)
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/RevealContent/GodotLogo"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -26.0
-offset_right = 40.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "🤖"
-horizontal_alignment = 1
+texture = ExtResource("3_icon")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="GitHubNote" type="Label" parent="MarginContainer/VBoxContainer/RevealContent"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "Projeto disponível no GitHub!
-[Adicionar link aqui]"
+https://github.com/ggxrc/slide-godot-devmind"
 horizontal_alignment = 1
 
 [node name="GlitchEffect" type="ColorRect" parent="."]

@@ -32,9 +32,9 @@ func _on_glitch_tick():
 	
 	# Fazer o título "glitchar"
 	if glitch_count % 2 == 0:
-		pre_reveal_title.text = _get_glitched_text("MOMENTO DA VERDADE...")
+		pre_reveal_title.text = _get_glitched_text("GOSTARAM DOS SLIDES?")
 	else:
-		pre_reveal_title.text = "MOMENTO DA VERDADE..."
+		pre_reveal_title.text = "GOSTARAM DOS SLIDES?"
 	
 	# Após 20 ticks (~2 segundos), revelar
 	if glitch_count >= 20:
