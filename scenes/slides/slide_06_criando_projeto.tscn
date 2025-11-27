@@ -145,4 +145,4 @@ scale = Vector2(8, 8)
 sprite_frames = ExtResource("4_ouxkh")
 animation = &"idle_03"
 autoplay = "idle_03"
-frame_progress = 0.30808163
+frame_progress = 0.41666505
