@@ -54,36 +54,53 @@ theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
 [node name="Line1" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5, 1, 0.5, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 22
 text = "extends CharacterBody2D"
 
 [node name="Line2" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 22
 text = " "
 
 [node name="Line3" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
-theme_override_font_sizes/font_size = 24
-text = "func _physics_process(delta):"
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "@export var bullet_scene: PackedScene  # Arraste a cena do tiro"
 
 [node name="Line4" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0.6, 1)
-theme_override_font_sizes/font_size = 24
-text = "    velocity.x = Input.get_axis(\"left\", \"right\")"
+theme_override_font_sizes/font_size = 22
+text = " "
 
 [node name="Line5" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "func shoot():"
+
+[node name="Line6" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0.6, 1)
-theme_override_font_sizes/font_size = 24
-text = "    move_and_slide()"
+theme_override_font_sizes/font_size = 22
+text = "    var bullet = bullet_scene.instantiate()"
+
+[node name="Line7" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+text = "    bullet.global_position = global_position"
+
+[node name="Line8" type="Label" parent="MarginContainer/VBoxContainer/CodeExample/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+text = "    get_tree().current_scene.add_child(bullet)"
 
 [node name="Explanation" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -98,13 +115,14 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
 theme_override_font_sizes/font_size = 28
-text = "GDScript"
+text = "Como funciona?"
 
 [node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Explanation/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Linguagem da Godot
-(Parecido com Python)"
+theme_override_font_sizes/font_size = 22
+text = "1. Cria cópia da cena do tiro
+2. Posiciona no player
+3. Adiciona à cena atual"
 autowrap_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Explanation"]
@@ -116,18 +134,18 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
 theme_override_font_sizes/font_size = 28
-text = "Simples!"
+text = "Instantiate!"
 
 [node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Explanation/VBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Não precisa saber programar
-para começar"
+theme_override_font_sizes/font_size = 22
+text = "Cria uma cópia de
+qualquer cena/objeto"
 autowrap_mode = 2
 
 [node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0.6, 1)
 theme_override_font_sizes/font_size = 26
-text = "Vamos aprender fazendo!"
+text = "Scripts prontos disponíveis em: scripts/game/"
 horizontal_alignment = 1

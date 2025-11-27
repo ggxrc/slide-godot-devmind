@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgdm61yvdb1s2"]
+[gd_scene load_steps=7 format=3 uid="uid://dgdm61yvdb1s2"]
 
 [ext_resource type="Script" uid="uid://chrs04u1qokbv" path="res://scripts/BaseSlide.gd" id="1_1"]
 [ext_resource type="SpriteFrames" uid="uid://cyhdvvolomeci" path="res://assets/Animations/Sprite_animations.tres" id="2_vqs8c"]
+[ext_resource type="Script" path="res://scripts/slides/Slide08.gd" id="3_slide08"]
+[ext_resource type="AudioStream" path="res://assets/sounds/slide 08/jump.wav" id="4_jump"]
+[ext_resource type="AudioStream" path="res://assets/sounds/slide 08/damage.wav" id="5_damage"]
+[ext_resource type="AudioStream" path="res://assets/sounds/slide 08/coin.wav" id="6_coin"]
 
 [node name="Slide08_Assets" type="Control"]
 layout_mode = 3
@@ -102,21 +106,39 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 color = Color(0.4, 0.8, 0.4, 0.3)
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Types/Audio/Icon"]
+[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Types/Audio/Icon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -13.0
-offset_right = 50.0
-offset_bottom = 13.0
+offset_left = -200.0
+offset_top = -25.0
+offset_right = 200.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "🔊"
-horizontal_alignment = 1
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnJump" type="Button" parent="MarginContainer/VBoxContainer/Types/Audio/Icon/ButtonsContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🔊 Pulo"
+
+[node name="BtnHit" type="Button" parent="MarginContainer/VBoxContainer/Types/Audio/Icon/ButtonsContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "💥 Dano"
+
+[node name="BtnCoin" type="Button" parent="MarginContainer/VBoxContainer/Types/Audio/Icon/ButtonsContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🪙 Moeda"
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Audio"]
 layout_mode = 2
@@ -141,20 +163,40 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 color = Color(0.4, 0.4, 0.8, 0.3)
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Types/Fonts/Icon"]
+[node name="FontsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Types/Fonts/Icon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -13.0
-offset_right = 50.0
-offset_bottom = 13.0
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aa"
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Font1" type="Label" parent="MarginContainer/VBoxContainer/Types/Fonts/Icon/FontsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Fonte Normal"
+horizontal_alignment = 1
+
+[node name="Font2" type="Label" parent="MarginContainer/VBoxContainer/Types/Fonts/Icon/FontsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fonte Destaque"
+horizontal_alignment = 1
+
+[node name="Font3" type="Label" parent="MarginContainer/VBoxContainer/Types/Fonts/Icon/FontsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Fonte Pequena"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Fonts"]
@@ -180,20 +222,36 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 color = Color(0.8, 0.8, 0.4, 0.3)
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Types/Others/Icon"]
+[node name="ShaderDemo" type="ColorRect" parent="MarginContainer/VBoxContainer/Types/Others/Icon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3, 0.5, 0.8, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Types/Others/Icon/ShaderDemo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
 offset_top = -13.0
-offset_right = 50.0
+offset_right = 70.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "📦"
+theme_override_font_sizes/font_size = 18
+text = "✨ Shaders"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Types/Others"]
@@ -215,3 +273,15 @@ theme_override_colors/font_color = Color(1, 1, 0.6, 1)
 theme_override_font_sizes/font_size = 26
 text = "Arraste arquivos → Godot importa automaticamente!"
 horizontal_alignment = 1
+
+[node name="AudioJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jump")
+
+[node name="AudioHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_damage")
+
+[node name="AudioCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_coin")
+
+[node name="InteractiveScript" type="Node" parent="."]
+script = ExtResource("3_slide08")
