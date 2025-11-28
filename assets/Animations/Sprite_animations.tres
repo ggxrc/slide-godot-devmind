@@ -388,7 +388,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dificil_kirby",
-"speed": 10.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -423,7 +423,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"facil_kirby",
-"speed": 9.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
