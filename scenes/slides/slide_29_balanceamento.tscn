@@ -75,7 +75,6 @@ scale = Vector2(2.650747, 2.4683545)
 sprite_frames = ExtResource("2_rw0rn")
 animation = &"facil_kirby"
 autoplay = "facil_kirby"
-frame_progress = 0.2922459
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/TooEasy"]
 layout_mode = 2
@@ -107,9 +106,8 @@ texture_filter = 3
 position = Vector2(37.000015, 36.000008)
 scale = Vector2(2.650747, 2.4683545)
 sprite_frames = ExtResource("2_rw0rn")
-animation = &"dificil_kirby"
+animation = &"balanceado_kirby"
 autoplay = "balanceado_kirby"
-frame_progress = 0.5526371
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Philosophy/Examples/Balanced"]
 layout_mode = 2
