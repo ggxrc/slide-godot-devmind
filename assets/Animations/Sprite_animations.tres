@@ -1,12 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=85 format=3 uid="uid://cyhdvvolomeci"]
+[gd_resource type="SpriteFrames" load_steps=89 format=3 uid="uid://cyhdvvolomeci"]
 
 [ext_resource type="Texture2D" uid="uid://cmswajm6ksqsj" path="res://assets/sprites/Termplate/imagens/16x16 Idle-Sheet.png" id="1_62k77"]
 [ext_resource type="Texture2D" uid="uid://beb45ihhwgcsv" path="res://assets/sprites/inimigo/Goomba-removebg-preview.png" id="1_m6dx8"]
 [ext_resource type="Texture2D" uid="uid://c6ok3ul4coic7" path="res://assets/sprites/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="2_e4e63"]
-[ext_resource type="Texture2D" uid="uid://bkeuh33ouvivl" path="res://assets/sprites/Kirby - Balanceamento/Game Boy Advance - Kirby_ Nightmare in Dream Land - Playable Characters - Hi-Jump Kirby.png" id="2_m6dx8"]
 [ext_resource type="Texture2D" uid="uid://bsawllr3jmgwh" path="res://assets/sprites/Kirby - Balanceamento/Game Boy Advance - Kirby_ Nightmare in Dream Land - Playable Characters - Sleep Kirby.png" id="3_jht1b"]
 [ext_resource type="Texture2D" uid="uid://34bjmn7l1hid" path="res://assets/sprites/Termplate/imagens/Spin-Sheet.png" id="3_l06ps"]
 [ext_resource type="Texture2D" uid="uid://bnfp0m5kkkbaq" path="res://assets/sprites/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="3_ruuuf"]
+[ext_resource type="Texture2D" uid="uid://cbmpwu2p1o5vi" path="res://assets/sprites/Kirby - Balanceamento/Game_Boy_Advance_-_Kirby__Nightmare_in_Dream_Land_-_Playable_Characters_-_Hi-Jump_Kirby-removebg-preview.png" id="3_yfbmu"]
 [ext_resource type="Texture2D" uid="uid://4hbjelrmy7t6" path="res://assets/sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="4_l06ps"]
 [ext_resource type="Texture2D" uid="uid://gaaygru3uqma" path="res://assets/sprites/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="5_ruuuf"]
 
@@ -83,16 +83,32 @@ atlas = ExtResource("5_ruuuf")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3buy"]
-atlas = ExtResource("2_m6dx8")
-region = Rect2(280, 240, 35, 40)
+atlas = ExtResource("3_yfbmu")
+region = Rect2(0, 38, 32, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8i1te"]
-atlas = ExtResource("2_m6dx8")
-region = Rect2(315, 240, 35, 40)
+atlas = ExtResource("3_yfbmu")
+region = Rect2(32, 38, 32, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27uti"]
-atlas = ExtResource("2_m6dx8")
-region = Rect2(350, 240, 35, 40)
+atlas = ExtResource("3_yfbmu")
+region = Rect2(64, 38, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36nbc"]
+atlas = ExtResource("3_yfbmu")
+region = Rect2(96, 38, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy0uu"]
+atlas = ExtResource("3_yfbmu")
+region = Rect2(128, 38, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqtvm"]
+atlas = ExtResource("3_yfbmu")
+region = Rect2(160, 38, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3aem"]
+atlas = ExtResource("3_yfbmu")
+region = Rect2(192, 38, 32, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq1po"]
 atlas = ExtResource("3_jht1b")
@@ -385,10 +401,22 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_27uti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36nbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy0uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqtvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3aem")
 }],
 "loop": true,
 "name": &"dificil_kirby",
-"speed": 2.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,

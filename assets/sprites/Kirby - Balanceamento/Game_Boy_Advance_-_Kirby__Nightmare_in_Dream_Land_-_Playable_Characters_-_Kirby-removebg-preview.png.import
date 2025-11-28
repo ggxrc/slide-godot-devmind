@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsawllr3jmgwh"
-path="res://.godot/imported/Game Boy Advance - Kirby_ Nightmare in Dream Land - Playable Characters - Sleep Kirby.png-bd983aeb0132b8a8fda2ac7086d7282c.ctex"
+uid="uid://f5vy1raosw40"
+path="res://.godot/imported/Game_Boy_Advance_-_Kirby__Nightmare_in_Dream_Land_-_Playable_Characters_-_Kirby-removebg-preview.png-247fb7519ed4a2a73468e2bb1ae510cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Kirby - Balanceamento/Game Boy Advance - Kirby_ Nightmare in Dream Land - Playable Characters - Sleep Kirby.png"
-dest_files=["res://.godot/imported/Game Boy Advance - Kirby_ Nightmare in Dream Land - Playable Characters - Sleep Kirby.png-bd983aeb0132b8a8fda2ac7086d7282c.ctex"]
+source_file="res://assets/sprites/Kirby - Balanceamento/Game_Boy_Advance_-_Kirby__Nightmare_in_Dream_Land_-_Playable_Characters_-_Kirby-removebg-preview.png"
+dest_files=["res://.godot/imported/Game_Boy_Advance_-_Kirby__Nightmare_in_Dream_Land_-_Playable_Characters_-_Kirby-removebg-preview.png-247fb7519ed4a2a73468e2bb1ae510cf.ctex"]
 
 [params]
 
